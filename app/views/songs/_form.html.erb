@@ -1,11 +1,16 @@
 <%= form_for @song  do |f| %>
+  <%= artist_select(@song.artist, @song) %> <!-- added -->
 
   <%= f.label :title %>
   <%= f.text_field :title %><br>
+
   <%= f.label :artist_name %>
-  <%= artist_select(@song.artist, @song) %>
   <%= f.text_field :artist_name %>
   <br />
 
   <%= f.submit %>
 <% end %>
+
+<!-- question:
+  for /songs/new , how do i make it so the selector box isnt always selection (and allow people to add in their own artist)
+-->
